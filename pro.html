@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="pro2.js"></script>
+    <style >
+           /* .lb{
+              font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+              text-shadow: darkgrey;
+           } */
+           body{background-image: url(starimage2.jpg); }
+            .container{
+                margin-left: auto;
+                margin-right: auto;
+                padding-top:2px;
+                /* background-image: url(star.jpg); */
+                /* background-blend-mode: multiply; */
+                background-color: rgba(67, 114, 245, 0.42); 
+            }
+           .middile {
+               display: block;
+               margin-left: auto;
+               margin-right: auto;
+               width:70%;
+               
+           }
+        
+           .header{
+               display: block;
+              
+               text-align: center;
+           }
+           .lb1{
+               font-size: -webkit-xxx-large;
+               text-shadow: 4px 4px 4px rgb(165, 157, 157);
+               line-height: 10px;
+           }
+           .footer{
+               display: block;
+               text-align: center;
+               line-height: 40px;
+               font-size: 30px;
+               /* display: -webkit-inline-box;  */
+               
+           }
+           #cd{
+               font-size:-webkit-xxx-large;
+               height: 60px;
+               width: auto;
+               background-color: #c1c1919c;
+               /* height: 50px;
+               width: 100px; */
+               /* background-color: rgba(182, 179, 179, 0.144);
+               text-align: center; */
+
+           }
+           /* input[partytime],[currenttime] {
+               background-color: blanchedalmond;
+               border: none;
+           } */
+           body{
+                background-color: black;
+           }
+           .settime{
+               padding-left: 30px;
+               padding-right: 30px;
+               padding-top: 5px;
+               padding-bottom: 5px;
+               background-color:rgba(199, 199, 17, 0.473);
+               border:none;
+               font-size: 30px;
+               box-shadow: 2px 2px 2px rgb(49, 34, 63);
+               border-radius: 5px;
+           }
+           /* #currenttime{
+            background-color: rgba(199, 199, 17, 0.473);
+            border: none;
+           } */
+           #partytime,#currenttime{
+               border: none;
+               background-color:rgba(199, 199, 17, 0.473);
+               box-shadow: 2px 2px 2px rgb(49, 34, 63);
+           }
+           #partytime:hover,#currenttime:hover{
+               border: none;
+               background-color:rgba(199, 199, 17, 0.623);
+           }
+           .settime:hover{
+               background-color: rgba(199, 199, 17, 0.623);
+               box-shadow: 2px 2px 2px rgb(49, 34, 63);
+           }
+           #currenttime{
+               height:35px;
+               width: 120px;
+               text-align: center;
+               display: -webkit-inline-box;
+               /* display: block; */
+           }
+           .image{
+               border-image: black;
+               display: block;
+               margin-left: auto;
+               margin-right: auto;
+               width: 50%;
+               
+           }
+
+
+
+           .modal {
+            display: none; /* Hidden by default */
+            position: fixed; 
+            z-index: 1; /* Sit on top */
+            padding-top: 100px; 
+            left: 0;
+            top: 0;
+            width: 100%; /* Full width */
+            height: 100%; 
+            overflow: auto; /* Enable scroll if needed */
+            background-color: rgb(0,0,0); /* Fallback color */
+            background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+            }
+
+            /* Modal Content */
+           .modal-content {
+            background-color: #fefefe;
+            margin: auto;
+            padding: 20px;
+            border: 1px solid #888;
+           width: 80%;
+            }
+
+            /* The Close Button */
+           .close {
+            color: #aaaaaa;
+            float: right;
+            font-size: 28px;
+         font-weight: bold;
+           }
+
+          .close:hover,
+         .close:focus {
+          color: #000;
+          text-decoration: none;
+          cursor: pointer;
+          }
+          
+    </style>
+    <title>PartyTime</title>
+</head>
+<body >
+    <div class="container">
+      <div class="header">
+          <p class="lb1"><b>PARTY</b></p><br>
+
+          <p class="lb1"><b>COUNTDOWN</b></p>
+          <p id="cd" >Is Here</p>    
+      </div>
+      <div class="middile">
+          <img class="image" src="party.png"><br>
+          <label></label>       
+      </div>
+      <div class="footer">
+         <div> <label for="currenttime"><b>Current Time</b></label><p  id="currenttime" name="currenttime" onload="displayclock()"></p>
+            
+        </div>
+        
+        <div>  
+          <label for="partytime"><b>Party Time</b></label>
+          <input id="partytime" name="partytime" type="datetime" step="1"  value="1/1/21 00:00:00" placeholder="MM/DD/YY HH:MM:SS">
+          <p id="error"></p>         
+        </div>
+         <button class="settime" onclick="cdFunction()"><i>Party Time</i></button>
+      </div>
+    </div>
+
+
+
+    <div id="myModal" class="modal">
+        <div class="modal-content">
+                <span class="close">&times;</span>
+                <h2>Let's Start The Party</h2> 
+        </div>
+    </div>
+
+</body>
+</html>
